@@ -1,0 +1,22 @@
+{% extends 'basereg.html' %}
+
+{% block title %}Авторизация{% endblock title %}
+{% block nav_reg %}
+           <a class="nav__link" href="{% url 'register' %}">Регистрация</a>
+{% endblock %}
+{% block content %}
+            <h1>Авторизация</h1>
+<hr>
+<form method="post">
+                 {% csrf_token %}
+                 <div class="form-error">{{ form.non_field_errors }}</div>
+                 {% for f in form %}
+                  <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}:</label>{{ f }}</p>
+                 <div class="form-error">{{ f.errors }}</div>
+                 {% endfor %}
+
+                 <button class="nav_app_my_workspace-btn" type="submit"><b>Войти</b></button>
+             </form>
+
+<a href="{% url 'password_reset'%}"> Забыли пароль? </a>
+{% endblock %}

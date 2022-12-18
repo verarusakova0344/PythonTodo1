@@ -1,0 +1,14 @@
+{% extends 'basereg.html' %}
+
+{% block title %}Подтверждение почты{% endblock title %}
+{% block nav_reg %}
+           <a class="nav__link" href="{% url 'login' %}">Войти</a>
+           <a class="nav__link" href="{% url 'register' %}">Регистрация</a>
+{% endblock %}
+{% block content %}
+    <div class="col-md-10 row">
+        <h3 class="text-center mt-5 mb-5">Завершение регистрации</h3>
+        <p>На вашу почту была отправлена ссылка, для подтверждения регистрации</p>
+        <p>Пожалуйста, проверьте вашу почту</p>
+    </div>
+{% endblock %}

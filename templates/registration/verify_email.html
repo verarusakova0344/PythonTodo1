@@ -1,0 +1,6 @@
+{% autoescape off %}
+    Привет, {{ user.get_username }}.
+    Это письмо было отправлено, потому что вы хотели зарегистрироваться на нашем сайте.
+    Для подтверждения регистрации, перейдите по ссылке:
+    http://{{ domain }}{% url 'verify_email' uidb64=uid token=token %}
+{% endautoescape %}
